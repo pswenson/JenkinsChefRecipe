@@ -1,13 +1,6 @@
-# myfirstcookbook cookbook
 
-# Requirements
-
+#Requires 
+Berkshelf
+Knife Solo
 # Usage
-
-# Attributes
-
-# Recipes
-
-# Author
-
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+knife solo cook root@redstone
