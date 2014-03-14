@@ -4,3 +4,4 @@ metadata
 
 cookbook 'jenkins'
 cookbook 'git'
+cookbook 'java'
