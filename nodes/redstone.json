@@ -1,11 +1,10 @@
-{ 
+{
     "java": {
         "jdk_version": "7",
-        "java_home": "opt/java", 
+        "java_home": "opt/java",
         "oracle" : {
             "accept_oracle_download_terms": true
-        },
-        "install_flavor": "oracle"
+        }
     },
 
     "run_list":["recipe[main]"]
