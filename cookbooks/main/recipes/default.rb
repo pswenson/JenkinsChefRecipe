@@ -12,7 +12,7 @@ package "git-core"
 package "vsftpd"
 include_recipe "java::default"
 
- puts "\njenkins => #{node[:jenkins].inspect}"
+puts "\njenkins => #{node[:jenkins].inspect}"
 
 include_recipe "jenkins::master"
 
@@ -22,6 +22,8 @@ jenkins_plugin "scm-api"
 jenkins_plugin "git-client"
 jenkins_plugin "git"
 jenkins_plugin "ansicolor"
+jenkins_plugin "gradle"
+
 
 service "iptables" do
   action :disable
@@ -30,13 +32,13 @@ end
 # jenkins_command 'start'
 #jenkins_command 'safe-restart'
 
- job_name = "myfirstjob"
+job_name = "myfirstjob"
 
- puts "jenkins file ====> #{node[:jenkins][:master][:home]}"
- job_config = File.join(node[:jenkins][:master][:home], "#{job_name}-config.xml")
+puts "jenkins file ====> #{node[:jenkins][:master][:home]}"
+job_config = File.join(node[:jenkins][:master][:home], "#{job_name}-config.xml")
 #
 jenkins_job job_name do
-  action :nothing
+  action :create
   config job_config
 end
 #
